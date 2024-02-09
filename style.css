@@ -1,0 +1,70 @@
+*{
+    border: none;
+    outline: none;
+    box-sizing: border-box;
+}
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: #002129;
+    font-family: 'Roboto', Courier, monospace;
+    color: #FFFFFF;
+}
+#full-number{
+    font-size: 1.5em;
+    padding: .5em ;
+}
+
+.odometer {
+    position: relative;
+    display: flex;
+    overflow: hidden;
+    height: 2em;
+    font-size: 2em;
+    color: #FFFFFF;
+    background-color: #005366;
+    box-shadow: 0px 3px 6px #00000029;
+    border-radius: 10px;
+}
+
+.odometer span {
+    position: relative;
+    opacity: 1;
+    transition: transform calc(var(--unit, 1) * .4s) ease-in-out, position .5s ease-in-out;
+    height: 20em;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0 20px;
+    border-right: 1px solid #FFFFFF;
+    transform: translateY(var(--trsfm, 0)) scale(1);
+}
+
+.odometer span.hide, .odometer span:empty {
+    opacity: 0;
+    transition: position 1s ease-in-out, transform .5s ease-in-out;
+    transform: scale(0);
+    position: absolute;
+}
+
+.odometer .suffix, .odometer:has(span:empty) .unite  {
+    border-right: none;
+    align-self: flex-start;
+    color: #FFFFFF;
+}
+
+.odometer .suffix {
+    height: 2em;
+    font-size: 1em;
+}
+
+.number {
+    height: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
