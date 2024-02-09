@@ -38,8 +38,4 @@ function odometer(start, stop = 0) {
         }
     }
 }
-let count = 1000;
-setInterval({
-    count++;
-    odometer(count);
-}, 1000)
+odometer(1234, 56780);
