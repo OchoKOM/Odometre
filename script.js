@@ -38,4 +38,8 @@ function odometer(start, stop = 0) {
         }
     }
 }
-odometer(1234, 5678);
+let count = 1000;
+setInterval({
+    count++;
+    odometer(count);
+}, 1000)
