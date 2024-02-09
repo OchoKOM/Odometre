@@ -13,7 +13,7 @@ body {
     font-family: 'Roboto', Courier, monospace;
     color: #FFFFFF;
 }
-#full-number{
+#full-number, .input{
     font-size: 1.5em;
     padding: .5em ;
 }
@@ -33,7 +33,7 @@ body {
 .odometer span {
     position: relative;
     opacity: 1;
-    transition: transform calc(var(--unit, 1) * .4s) ease-in-out, position .5s ease-in-out;
+    transition: transform calc(var(--unit, 1) * .4s) ease-in-out;
     height: 20em;
     display: flex;
     flex-direction: column;
@@ -44,9 +44,9 @@ body {
     transform: translateY(var(--trsfm, 0)) scale(1);
 }
 
-.odometer span.hide, .odometer span:empty {
+.odometer span.hide:not(span.hide:last-of-type), .odometer span:empty {
     opacity: 0;
-    transition: position 1s ease-in-out, transform .5s ease-in-out;
+    transition: transform .5s ease-in-out;
     transform: scale(0);
     position: absolute;
 }
