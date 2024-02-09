@@ -38,4 +38,4 @@ function odometer(start, stop = 0) {
         }
     }
 }
-odometer(1234, 10034500);
+odometer(1234, 5678);
